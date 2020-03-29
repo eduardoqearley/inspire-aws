@@ -13,16 +13,17 @@ script:
 stages:
   - build and test
   - deploy
+before_script: cd docs  
 jobs:
   include:
     - stage: build and test # This stage builds and lints in parallel
       name: Build
-      script: docs/make html # build the docs
+      script: make html # build the docs
       skip-cleanup: true
     - stage: deploy
       name: Deploy to GitHub Pages
       if: (NOT type IN (pull_request)) AND (branch = master) # only deploy if merging on master
-      script: docs/make html
+      script: make html
       deploy:
         provider: pages # deploy on github pages
         skip_cleanup: true
