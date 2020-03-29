@@ -17,7 +17,7 @@ jobs:
   include:
     - stage: build and test # This stage builds and lints in parallel
       name: Build
-      script: make html # build the docs
+      script: docs/make html # build the docs
       skip-cleanup: true
     - stage: deploy
       name: Deploy to GitHub Pages
