@@ -8,7 +8,6 @@ python:
 install:
   - pip install -U pip
   - pip install -r requirements.txt # install the required packages
-  - go get github.com/errata-ai/vale # install vale
 script:
   - skip # Travis requires a `script` property, but we do not need it
 stages:
@@ -20,8 +19,6 @@ jobs:
       name: Build
       script: make html # build the docs
       skip-cleanup: true
-    - script: vale source # run vale
-      name: Test
     - stage: deploy
       name: Deploy to GitHub Pages
       if: (NOT type IN (pull_request)) AND (branch = master) # only deploy if merging on master
