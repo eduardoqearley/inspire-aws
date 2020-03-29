@@ -13,7 +13,9 @@
         "**/_build": true,
         "_build": true,
         "**/.vscode": true,
-        ".vscode": true
+        ".vscode": true,
+        "**/.gitignore": true,
+        ".gitignore": true
     },
     "explorerExclude.backup": null
 }
