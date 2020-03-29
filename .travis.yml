@@ -8,6 +8,7 @@ python:
 install:
   - pip install -U pip
   - pip install -r requirements.txt # install the required packages
+  - pip install sphinx_rtd_theme
 script:
   - skip # Travis requires a `script` property, but we do not need it
 stages:
